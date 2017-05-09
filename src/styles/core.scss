@@ -1,0 +1,101 @@
+@import 'fonts';
+
+$left-gradient: #FFB88C;
+$right-gradient: #DE6262;
+$font-color-main: #ffffff;
+
+$media-sizes-sm: 600px;
+
+$font-sizes: (
+  h1: 5.9vw,
+  h2: 2.9vw
+);
+
+$font-sizes-sm: (
+  h1: 9.5vw,
+  h2: 5.5vw,
+  '[class^="icon-"]:before': 4.9vw
+);
+
+body {
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  color: $font-color-main;
+  background: $right-gradient;
+  background: -webkit-linear-gradient(to right, $left-gradient, $right-gradient);
+  background: linear-gradient(to right, $left-gradient, $right-gradient);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: map-get($font-sizes, h1);
+  line-height: 90%;
+}
+
+h2 {
+  margin: 0 0 5px 0;
+  font-size: map-get($font-sizes, h2);
+  font-family: monospace;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+a, a:hover {
+  color: $font-color-main;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+[class^="icon-"]:before {
+  font-size: 1.9vw;
+}
+
+/* Background */
+section.background {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+
+  canvas {
+    background: transparent;
+  }
+
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #efefef;
+    opacity: 0.2;
+  }
+}
+
+/* Container */
+section.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  div.callout {
+    margin: 30vh auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: $media-sizes-sm) {
+  @each $header, $size in $font-sizes-sm {
+    #{$header} {
+      font-size: $size;
+    }
+  }
+}
