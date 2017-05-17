@@ -7,7 +7,7 @@ export default class Point {
 
     this.point;
     this.line;
-    this.coords = { x: 0, y: 0 }
+    this.coords = { x: 0, y: 0 };
 
     this.nextSibling = null;
 

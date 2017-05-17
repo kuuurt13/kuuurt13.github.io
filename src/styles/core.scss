@@ -4,17 +4,28 @@ $left-gradient: #FFB88C;
 $right-gradient: #DE6262;
 $font-color-main: #ffffff;
 
-$media-sizes-sm: 600px;
+/* Media Sizes */
+$media-sizes-lg: 1050px;
+$media-sizes-md: 650px;
+$media-sizes-sm: 450px;
 
-$font-sizes: (
-  h1: 5.9vw,
-  h2: 2.9vw
+/* Font Sizes */
+$font-sizes-lg: (
+  h1: 8.2vw,
+  h2: 5.2vw,
+  '[class^="icon-"]:before': 4.2vw
+);
+
+$font-sizes-md: (
+  h1: 13.5vw,
+  h2: 8vw,
+  '[class^="icon-"]:before': 9vw
 );
 
 $font-sizes-sm: (
-  h1: 9.5vw,
-  h2: 5.5vw,
-  '[class^="icon-"]:before': 4.9vw
+  h1: 16.5vw,
+  h2: 10vw,
+  '[class^="icon-"]:before': 9vw
 );
 
 body {
@@ -33,14 +44,13 @@ body {
 
 h1 {
   margin: 0;
-  font-size: map-get($font-sizes, h1);
+  font-size: 5.9vw;
   line-height: 90%;
 }
 
 h2 {
   margin: 0 0 5px 0;
-  font-size: map-get($font-sizes, h2);
-  font-family: monospace;
+  font-size: 2.9vw;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -51,10 +61,11 @@ a, a:hover {
 
 a:hover {
   opacity: 0.7;
+  transition: opacity 350ms linear;
 }
 
 [class^="icon-"]:before {
-  font-size: 1.9vw;
+  font-size: 2.7vw;
 }
 
 /* Background */
@@ -87,15 +98,34 @@ section.container {
   width: 100%;
 
   div.callout {
-    margin: 30vh auto;
+    margin: 25vh auto;
     text-align: center;
   }
 }
 
+/* Media Queries */
 @media (max-width: $media-sizes-sm) {
-  @each $header, $size in $font-sizes-sm {
-    #{$header} {
-      font-size: $size;
+  section.container {
+    div.callout {
+      margin: 20vh auto;
     }
   }
 }
+
+/* Font Sizes Map */
+$media-font-sizes: (
+  #{$media-sizes-lg}: $font-sizes-lg,
+  #{$media-sizes-md}: $font-sizes-md,
+  #{$media-sizes-sm}: $font-sizes-sm
+);
+
+/* Set Media & Font Sizes*/
+ @each $size, $styles in $media-font-sizes {
+   @media (max-width: $size) {
+      @each $header, $size in $styles {
+          #{$header} {
+            font-size: $size;
+          }
+      }
+    }
+  }

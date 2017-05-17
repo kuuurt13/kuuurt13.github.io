@@ -18,6 +18,11 @@ module.exports = {
         loader: extractCSS.extract(['css-loader', 'sass-loader'])
       },
       {
+        test: /\.(jpg|jpeg|gif|png|ico)$/,
+        exclude: /node_modules/,
+        loader: 'file-loader?name=[path][name].[ext]'
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|svg)$/,
         exclude: /node_modules/,
         loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'

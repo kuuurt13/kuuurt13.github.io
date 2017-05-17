@@ -1,4 +1,5 @@
 import './styles/core.scss';
+import './assets/favicon.ico';
 import 'yuki-createjs/lib/easeljs-0.8.2.combined';
 import Point from './point';
 
