@@ -69,7 +69,7 @@ a:hover {
 }
 
 /* Background */
-section.background {
+.background {
   position: relative;
   text-align: center;
   overflow: hidden;
@@ -90,14 +90,14 @@ section.background {
 }
 
 /* Container */
-section.container {
+.container {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
 
-  div.callout {
+  .callout {
     margin: 25vh auto;
     text-align: center;
   }
@@ -105,8 +105,8 @@ section.container {
 
 /* Media Queries */
 @media (max-width: $media-sizes-sm) {
-  section.container {
-    div.callout {
+  .container {
+    .callout {
       margin: 20vh auto;
     }
   }
