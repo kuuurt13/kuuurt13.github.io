@@ -1,10 +1,11 @@
-import './styles/core.scss';
-import './assets/favicon.ico';
 import 'yuki-createjs/lib/easeljs-0.8.2.combined';
 import Point from './point';
 
+const stage = new createjs.Stage('stage');
+
 export default class Main {
-  constructor(stage, config) {
+
+  constructor(config) {
     this.stage = stage;
     this.points = [];
 
@@ -33,12 +34,3 @@ export default class Main {
     this.stage.update();
   }
 }
-
-new Main(
-  new createjs.Stage('stage'),
-  {
-    lineStroke: '#ffeb99',
-    maxPoints: 50,
-    interval: 60
-  }
-);
