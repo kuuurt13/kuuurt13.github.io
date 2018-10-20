@@ -71,6 +71,8 @@ a:hover {
 /* Background */
 .background {
   position: relative;
+  height: 100vh;
+  width: 100vw;
   text-align: center;
   overflow: hidden;
 
@@ -80,8 +82,8 @@ a:hover {
 
   .overlay {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     top: 0;
     left: 0;
     background: #efefef;
