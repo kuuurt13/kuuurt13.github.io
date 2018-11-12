@@ -27,5 +27,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-mail-circled:before { content: '\e800'; }
-.icon-github-circled:before { content: '\f301'; }
+.icon-mail:before { content: '\e800'; }
+.icon-github:before { content: '\f300'; }
+.icon-codepen:before { content: '\f32c'; }
