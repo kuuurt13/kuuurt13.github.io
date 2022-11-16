@@ -21,7 +21,7 @@
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
-    "webpack": "^2.3.3",
+    "webpack": "^5.75.0",
     "webpack-dev-server": "^2.2.0-rc.0"
   },
   "dependencies": {
